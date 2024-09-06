@@ -14,12 +14,12 @@
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build"
   },
-  "author": "thuongdx@verve-inc.jp",
+  "author": "test",
   "license": "MIT",
   "devDependencies": {
-    "@capacitor/android": "^2.5.0",
-    "@capacitor/core": "^2.5.0",
-    "@capacitor/ios": "^2.5.0",
+    "@capacitor/android": "^2.4.7",
+    "@capacitor/core": "^2.4.7",
+    "@capacitor/ios": "^2.4.7",
     "@ionic/prettier-config": "^1.0.0",
     "@ionic/swiftlint-config": "^1.0.0",
     "@rollup/plugin-node-resolve": "^8.1.0",
@@ -31,7 +31,7 @@
     "typescript": "~3.8.3"
   },
   "peerDependencies": {
-    "@capacitor/core": "^2.5.0"
+    "@capacitor/core": "^2.4.7"
   },
   "files": [
     "dist/",
@@ -56,9 +56,9 @@
   "swiftlint": "@ionic/swiftlint-config",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "test"
   },
   "bugs": {
-    "url": ""
+    "url": "test/issues"
   }
 }
