@@ -45,10 +45,10 @@
     "test": "echo none yet!"
   },
   "devDependencies": {
-    "@capacitor/android": "^4.0.0",
-    "@capacitor/core": "^4.0.0",
+    "@capacitor/android": "^2.4.7",
+    "@capacitor/core": "^2.4.7",
     "@capacitor/docgen": "^0.0.15",
-    "@capacitor/ios": "^4.0.0",
+    "@capacitor/ios": "^2.4.7",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
