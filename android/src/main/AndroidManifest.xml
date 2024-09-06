@@ -1,5 +1,3 @@
-
-  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.verve.mdmappconfig.mdmappconfig">
-  </manifest>
-  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dtarnawsky.capmdmappconfig">
+</manifest>
