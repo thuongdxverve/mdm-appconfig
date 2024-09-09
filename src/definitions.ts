@@ -1,8 +1,4 @@
-declare module '@capacitor/core' {
-  interface PluginRegistry {
-    MDMAppConfig: MDMAppConfigPlugin;
-  }
-}
+
 
 export interface MDMAppConfigPlugin {
     /**
@@ -12,7 +8,6 @@ export interface MDMAppConfigPlugin {
      */
     getValue(options: getValueOptions): Promise<GetValueResult>;
 }
-// tslint:disable-next-line:class-name
 export interface getValueOptions {
     /**
      * The key (or variable name)

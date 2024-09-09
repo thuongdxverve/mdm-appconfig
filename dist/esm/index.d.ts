@@ -1,2 +1,4 @@
+import type { MDMAppConfigPlugin } from './definitions';
+declare const AppConfig: MDMAppConfigPlugin;
 export * from './definitions';
-export * from './web';
+export { AppConfig };

@@ -1,2 +1,2 @@
-export * from './web';
+export { AppConfig };
 //# sourceMappingURL=index.js.map
