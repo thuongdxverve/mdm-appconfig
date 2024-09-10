@@ -1,9 +1,14 @@
+declare module '@capacitor/core' {
+    interface PluginRegistry {
+        MDMAppConfig: MDMAppConfigPlugin;
+    }
+}
 export interface MDMAppConfigPlugin {
-    /**
-     * Get a value from App Config. On iOS, values are obtained from UserDefaults in com.apple.configuration.managed.
-     * @param options Options to get value
-     * @since 1.0.0
-     */
+    echo(options: {
+        value: string;
+    }): Promise<{
+        value: string;
+    }>;
     getValue(options: getValueOptions): Promise<GetValueResult>;
 }
 export interface getValueOptions {

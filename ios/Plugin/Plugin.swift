@@ -5,8 +5,15 @@ import Capacitor
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitorjs.com/docs/plugins/ios
  */
-@objc(MDMAppConfigPlugin)
-public class MDMAppConfigPlugin: CAPPlugin {
+@objc(MDMAppConfig)
+public class MDMAppConfig: CAPPlugin {
+
+    @objc func echo(_ call: CAPPluginCall) {
+        let value = call.getString("value") ?? ""
+        call.success([
+            "value": value
+        ])
+    }
 
     @objc func getValue(_ call: CAPPluginCall) {
         let key = call.getString("key")

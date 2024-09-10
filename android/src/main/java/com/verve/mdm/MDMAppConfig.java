@@ -1,5 +1,7 @@
-package com.dtarnawsky.capmdmappconfig;
+package com.verve.mdm;
 
+
+import com.getcapacitor.NativePlugin;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -17,28 +19,32 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-@CapacitorPlugin(name = "MDMAppConfig")
-public class MDMAppConfigPlugin extends Plugin {
+@NativePlugin
+public class MDMAppConfig extends Plugin {
 
     @PluginMethod
-    public void getValue(PluginCall call) {
+    public void echo(PluginCall call) {
+        String value = call.getString("value");
+
         JSObject ret = new JSObject();
+        ret.put("value", value);
+        call.success(ret);
+    }
+    @PluginMethod
+    public void getValue(PluginCall call) {
         try {
             Context context = this.bridge.getActivity().getApplicationContext();
             RestrictionsManager resManager = (RestrictionsManager) context.getSystemService(Context.RESTRICTIONS_SERVICE);
             Bundle restrictions = resManager.getApplicationRestrictions();
             Set<String> keys = restrictions.keySet();
-            String keyName = call.getString("key");
+            final String keyName = call.getString("key");
             if (keys != null) {
                 for (String key : keys) {
-                    if (key == keyName) {
-                        call.resolve(
-                            new JSObject() {
-                                {
-                                    put("value", JSONObject.wrap(restrictions.get(key)));
-                                }
-                            }
-                        );
+                    if (key.equals(keyName)) {
+                        JSObject ret = new JSObject();
+                        String value = restrictions.getString(key);
+                        ret.put("value", value == null ? JSObject.NULL : value);
+                        call.resolve(ret);
                         return;
                     }
                 }
@@ -46,7 +52,8 @@ public class MDMAppConfigPlugin extends Plugin {
                 call.reject("No configurations found");
                 return;
             }
-            call.reject("key cannot be found");
+
+            call.reject("key " + keyName + " cannot be found");
         } catch (Exception ex) {
             call.error(ex.getLocalizedMessage());
         }

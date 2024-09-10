@@ -14,7 +14,7 @@
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build"
   },
-  "author": "test",
+  "author": "thuongdx@verve-inc.jp",
   "license": "MIT",
   "devDependencies": {
     "@capacitor/android": "^2.4.7",
